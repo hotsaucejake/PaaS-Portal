@@ -200,10 +200,13 @@
                               <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="1"> Yes
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y"> Yes
                                  </label>
                                  <label class="radio-inline">
-                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0"> No
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="n"> No
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="c"> Completed
                                  </label>
                               </div>
                            </div>
