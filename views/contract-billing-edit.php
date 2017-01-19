@@ -288,7 +288,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="hiringPhone">Hiring Manager / Timesheet Approver Phone</label>
                                  <div class="col-md-8">
-                                    <input id="hiringPhone" name="hiringPhone" type="text" value="<?php echo $cb_form[0]->manager_phone; ?>" class="form-control input-md" required="">
+                                    <input id="hiringPhone" name="hiringPhone" type="text" value="<?php echo $cb_form[0]->manager_phone; ?>" class="form-control input-md">
                                  </div>
                               </div>
                            </div>
