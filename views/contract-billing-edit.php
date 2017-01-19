@@ -182,6 +182,9 @@
                                     <label class="radio-inline">
                                       <input type="radio" name="issuedHardware" id="issuedHardware" value="client" <?php if($cb_form[0]->issued_hardware == "client") { echo "checked"; } ?> > Client
                                     </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="issuedHardware" id="issuedHardware" value="client" <?php if($cb_form[0]->issued_hardware == "none") { echo "checked"; } ?> > None
+                                    </label>
                                  </div>
                               </div>
                               <div class="form-group">

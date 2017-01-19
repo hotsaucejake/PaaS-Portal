@@ -180,6 +180,9 @@
                                  <label class="radio-inline">
                                    <input type="radio" name="issuedHardware" id="issuedHardware" value="client"> Client
                                  </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="issuedHardware" id="issuedHardware" value="none"> None
+                                 </label>
                               </div>
                            </div>
                            <div class="form-group">
