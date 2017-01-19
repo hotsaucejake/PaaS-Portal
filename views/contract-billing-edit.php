@@ -167,7 +167,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="baseSalary">Base Salary</label>
                                  <div class="col-md-8">
-                                    <input id="baseSalary" name="baseSalary" type="text" value="<?php echo $cb_form[0]->base_salary; ?>" class="form-control input-md" required="">
+                                    <input id="baseSalary" name="baseSalary" type="text" value="<?php echo $cb_form[0]->base_salary; ?>" class="form-control input-md">
                                  </div>
                               </div>
                            </div>
