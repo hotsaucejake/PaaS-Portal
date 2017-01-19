@@ -167,7 +167,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="baseSalary">Base Salary</label>
                                  <div class="col-md-8">
-                                    <input id="baseSalary" name="baseSalary" type="text" value="<?php echo $cb_form[0]->base_salary; ?>" class="form-control input-md" required="">
+                                    <input id="baseSalary" name="baseSalary" type="text" value="<?php echo $cb_form[0]->base_salary; ?>" class="form-control input-md">
                                  </div>
                               </div>
                            </div>
@@ -181,6 +181,9 @@
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="issuedHardware" id="issuedHardware" value="client" <?php if($cb_form[0]->issued_hardware == "client") { echo "checked"; } ?> > Client
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="issuedHardware" id="issuedHardware" value="client" <?php if($cb_form[0]->issued_hardware == "none") { echo "checked"; } ?> > None
                                     </label>
                                  </div>
                               </div>
@@ -199,10 +202,13 @@
                                  <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="1" <?php if($cb_form[0]->background_check == "1") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="1" <?php if($cb_form[0]->background_check == "y") { echo "checked"; } ?> > Yes
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0" <?php if($cb_form[0]->background_check == "0") { echo "checked"; } ?> > No
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0" <?php if($cb_form[0]->background_check == "n") { echo "checked"; } ?> > No
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0" <?php if($cb_form[0]->background_check == "c") { echo "checked"; } ?> > Completed
                                     </label>
                                  </div>
                               </div>
@@ -231,12 +237,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="contractPeriod">Contract Period</label>
                                  <div class="col-md-8">
-                                    <select class="form-control" name="contractPeriod">
-                                       <option value="3m" <?php if($cb_form[0]->contract_period == "3m") { echo "selected"; } ?> >3 mo.</option>
-                                       <option value="6m" <?php if($cb_form[0]->contract_period == "6m") { echo "selected"; } ?> >6 mo.</option>
-                                       <option value="1y" <?php if($cb_form[0]->contract_period == "1y") { echo "selected"; } ?> >1 yr.</option>
-                                       <option value="open" <?php if($cb_form[0]->contract_period == "open") { echo "selected"; } ?> >Open</option>
-                                    </select>
+                                    <input id="contractPeriod" name="contractPeriod" type="text" value="<?php echo $cb_form[0]->contract_period; ?>" class="form-control input-md" required="">
                                  </div>
                               </div>
                            </div>
@@ -287,7 +288,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="hiringPhone">Hiring Manager / Timesheet Approver Phone</label>
                                  <div class="col-md-8">
-                                    <input id="hiringPhone" name="hiringPhone" type="text" value="<?php echo $cb_form[0]->manager_phone; ?>" class="form-control input-md" required="">
+                                    <input id="hiringPhone" name="hiringPhone" type="text" value="<?php echo $cb_form[0]->manager_phone; ?>" class="form-control input-md">
                                  </div>
                               </div>
                            </div>

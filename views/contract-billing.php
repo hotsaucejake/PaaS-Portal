@@ -165,7 +165,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="baseSalary">Base Salary</label>
                               <div class="col-md-8">
-                                 <input id="baseSalary" name="baseSalary" type="text" placeholder="$" class="form-control input-md" required="">
+                                 <input id="baseSalary" name="baseSalary" type="text" placeholder="$" class="form-control input-md">
                               </div>
                            </div>
                         </div>
@@ -179,6 +179,9 @@
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="issuedHardware" id="issuedHardware" value="client"> Client
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="issuedHardware" id="issuedHardware" value="none"> None
                                  </label>
                               </div>
                            </div>
@@ -197,10 +200,13 @@
                               <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="1"> Yes
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y"> Yes
                                  </label>
                                  <label class="radio-inline">
-                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0"> No
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="n"> No
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="c"> Completed
                                  </label>
                               </div>
                            </div>
@@ -229,12 +235,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="contractPeriod">Contract Period</label>
                               <div class="col-md-8">
-                                 <select class="form-control" name="contractPeriod">
-                                    <option value="3m">3 mo.</option>
-                                    <option value="6m">6 mo.</option>
-                                    <option value="1y">1 yr.</option>
-                                    <option value="open">Open</option>
-                                 </select>
+                                 <input id="contractPeriod" name="contractPeriod" type="text" placeholder="6 mo." class="form-control input-md" required="">
                               </div>
                            </div>
                         </div>
@@ -285,7 +286,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="hiringPhone">Hiring Manager / Timesheet Approver Phone</label>
                               <div class="col-md-8">
-                                 <input id="hiringPhone" name="hiringPhone" type="text" placeholder="555-555-5555" class="form-control input-md" required="">
+                                 <input id="hiringPhone" name="hiringPhone" type="text" placeholder="555-555-5555" class="form-control input-md">
                               </div>
                            </div>
                         </div>
