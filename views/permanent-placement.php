@@ -58,7 +58,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="customerPO">Customer PO#</label>
                               <div class="col-md-8">
-                                 <input id="customerPO" name="customerPO" type="text" placeholder="PO#" class="form-control input-md" required="">
+                                 <input id="customerPO" name="customerPO" type="text" placeholder="PO#" class="form-control input-md">
                               </div>
                            </div>
                        </div>
