@@ -235,12 +235,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="contractPeriod">Contract Period</label>
                               <div class="col-md-8">
-                                 <select class="form-control" name="contractPeriod">
-                                    <option value="3m">3 mo.</option>
-                                    <option value="6m">6 mo.</option>
-                                    <option value="1y">1 yr.</option>
-                                    <option value="open">Open</option>
-                                 </select>
+                                 <input id="contractPeriod" name="contractPeriod" type="text" placeholder="6 mo." class="form-control input-md" required="">
                               </div>
                            </div>
                         </div>

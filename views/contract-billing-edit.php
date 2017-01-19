@@ -237,12 +237,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="contractPeriod">Contract Period</label>
                                  <div class="col-md-8">
-                                    <select class="form-control" name="contractPeriod">
-                                       <option value="3m" <?php if($cb_form[0]->contract_period == "3m") { echo "selected"; } ?> >3 mo.</option>
-                                       <option value="6m" <?php if($cb_form[0]->contract_period == "6m") { echo "selected"; } ?> >6 mo.</option>
-                                       <option value="1y" <?php if($cb_form[0]->contract_period == "1y") { echo "selected"; } ?> >1 yr.</option>
-                                       <option value="open" <?php if($cb_form[0]->contract_period == "open") { echo "selected"; } ?> >Open</option>
-                                    </select>
+                                    <input id="contractPeriod" name="contractPeriod" type="text" value="<?php echo $cb_form[0]->contract_period; ?>" class="form-control input-md" required="">
                                  </div>
                               </div>
                            </div>
