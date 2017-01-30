@@ -47,7 +47,7 @@
                        echo '<td>'; ?>
                                 <div class="actions">
                                        <a class="btn btn-circle btn-icon-only btn-success font-dark bold"
-                                             href="index.php?page=">
+                                             href="pdf.php?form=permanent-placement&id=<?php echo $form->id; ?>" target="_blank">
                                             <i class="fa fa-file-pdf-o"></i>
                                        </a>
                                        <a class="btn btn-circle btn-icon-only btn-warning font-dark bold"
