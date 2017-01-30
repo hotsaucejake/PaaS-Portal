@@ -3,7 +3,7 @@
 
 <?php
 
-$sql = 'SELECT id, customer_name, customer_po, placement_name, position, created, user_name
+$sql = 'SELECT id, customer_name, customer_po, placement_name, position, created, user_name, approved
          FROM permanent_placement
          ORDER BY id DESC';
 
