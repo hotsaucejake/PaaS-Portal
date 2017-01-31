@@ -5,16 +5,27 @@
 
 if(isset($_GET['approve'])){
    $sql = 'UPDATE contract_billing
-            SET 
+            SET
             approved = 1
             WHERE id = ' . $_GET['approve'];
    $approve_user = $paas->db_query($sql);
-   
+
    if($approve_user){
          $msg = '<h3>Approved!</h3>';
       } else {
        $msg = "<h3>You already approved this or this entry does not exist.</h3>";
       }
+}
+
+if (isset($_GET['delete'])) {
+   $sql = 'DELETE FROM `contract_billing`
+            WHERE ((`id` = \'' . $_GET['delete'] . '\'))';
+   $delete_id = $paas->db_query($sql);
+   if($delete_id){
+      $msg = '<h3>This entry has been deleted.</h3>';
+   } else {
+    $msg = "<h3>You alread deleted this or this entry does not exist.</h3>";
+   }
 }
 
 $sql = 'SELECT id, first_name, last_name, client_name, job_title, created, user_name, approved

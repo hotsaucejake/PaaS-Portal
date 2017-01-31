@@ -12,6 +12,11 @@
                <?php echo '<pre>' . print_r($msg, true) . '</pre>'; ?>
             </div>
          <?php } ?>
+         <?php if(isset($_GET['approve'])){ ?>
+            <div class="note note-info">
+               <?php echo '<pre>' . print_r($msg, true) . '</pre>'; ?>
+            </div>
+         <?php } ?>
 
         <div class="portlet light bordered">
             <div class="portlet-title">

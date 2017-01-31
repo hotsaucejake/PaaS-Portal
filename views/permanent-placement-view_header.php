@@ -3,6 +3,20 @@
 
 <?php
 
+if(isset($_GET['approve'])){
+   $sql = 'UPDATE permanent_placement
+            SET
+            approved = 1
+            WHERE id = ' . $_GET['approve'];
+   $approve_user = $paas->db_query($sql);
+
+   if($approve_user){
+         $msg = '<h3>Approved!</h3>';
+      } else {
+       $msg = "<h3>You already approved this or this entry does not exist.</h3>";
+      }
+}
+
 if (isset($_GET['delete'])) {
    $sql = 'DELETE FROM `permanent_placement`
             WHERE ((`id` = \'' . $_GET['delete'] . '\'))';
