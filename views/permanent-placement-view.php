@@ -12,6 +12,11 @@
                <?php echo '<pre>' . print_r($msg, true) . '</pre>'; ?>
             </div>
          <?php } ?>
+         <?php if(isset($_GET['approve'])){ ?>
+            <div class="note note-info">
+               <?php echo '<pre>' . print_r($msg, true) . '</pre>'; ?>
+            </div>
+         <?php } ?>
 
         <div class="portlet light bordered">
             <div class="portlet-title">
@@ -47,19 +52,25 @@
                        echo '<td>'; ?>
                                 <div class="actions">
                                        <a class="btn btn-circle btn-icon-only btn-success font-dark bold"
-                                             href="index.php?page=">
+                                             href="pdf.php?form=permanent-placement&id=<?php echo $form->id; ?>" target="_blank" title="PDF">
                                             <i class="fa fa-file-pdf-o"></i>
                                        </a>
                                        <a class="btn btn-circle btn-icon-only btn-warning font-dark bold"
-                                             href="index.php?page=permanent-placement-edit&id=<?php echo $form->id; ?>">
+                                             href="index.php?page=permanent-placement-edit&id=<?php echo $form->id; ?>" title="Edit">
                                             <i class="fa fa-edit"></i>
                                        </a>
-                                       <?php if($_SESSION['user_role'] == "super") { ?>
+                                       <?php if($_SESSION['user_role'] == "super" || $_SESSION['user_role'] == "admin") { ?>
                                        <a class="btn btn-circle btn-icon-only btn-danger font-dark bold"
-                                             href="index.php?page=permanent-placement-edit&delete=<?php echo $form->id; ?>"
-                                             onclick="return confirm('Are you sure you wish to delete this form?');">
+                                             href="index.php?page=permanent-placement-view&delete=<?php echo $form->id; ?>"
+                                             onclick="return confirm('Are you sure you wish to delete this form?');" title="Delete">
                                             <i class="icon-trash"></i>
                                        </a>
+                                       <?php if($form->approved == 0) { ?>
+                                          <a class="btn btn-circle btn-icon-only btn-success font-dark bold"
+                                                href="index.php?page=permanent-placement-view&approve=<?php echo $form->id; ?>" target="_blank" title="Approve">
+                                               <i class="icon-check"></i>
+                                          </a>
+                                          <?php } ?>
                                        <?php } ?>
                                 </div>
                        <?php
