@@ -67,7 +67,7 @@
                                        </a>
                                        <?php if($form->approved == 0) { ?>
                                           <a class="btn btn-circle btn-icon-only btn-success font-dark bold"
-                                                href="index.php?page=permanent-placement-view&approve=<?php echo $form->id; ?>" target="_blank" title="Approve">
+                                                href="index.php?page=permanent-placement-view&approve=<?php echo $form->id; ?>" title="Approve">
                                                <i class="icon-check"></i>
                                           </a>
                                           <?php } ?>
