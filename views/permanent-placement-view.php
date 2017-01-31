@@ -56,7 +56,7 @@
                                        </a>
                                        <?php if($_SESSION['user_role'] == "super") { ?>
                                        <a class="btn btn-circle btn-icon-only btn-danger font-dark bold"
-                                             href="index.php?page=permanent-placement-edit&delete=<?php echo $form->id; ?>"
+                                             href="index.php?page=permanent-placement-view&delete=<?php echo $form->id; ?>"
                                              onclick="return confirm('Are you sure you wish to delete this form?');" title="Delete">
                                             <i class="icon-trash"></i>
                                        </a>
