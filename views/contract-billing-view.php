@@ -48,7 +48,7 @@
                        echo '<td>' . $form->client_name . '</td>';
                        echo '<td>' . $form->job_title . '</td>';
                        echo '<td>' . $form->created . '</td>';
-                       echo '<td>' . $form->approved . '</td>';
+                       echo '<td>' . $form->user_name . '</td>';
                        echo '<td>'; ?>
                                 <div class="actions">
                                        <a class="btn btn-circle btn-icon-only btn-success font-dark bold"
