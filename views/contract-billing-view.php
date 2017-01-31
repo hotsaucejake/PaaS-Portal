@@ -59,7 +59,7 @@
                                              href="index.php?page=contract-billing-edit&id=<?php echo $form->id; ?>" title="Edit">
                                             <i class="fa fa-edit"></i>
                                        </a>
-                                       <?php if($_SESSION['user_role'] == "super") { ?>
+                                       <?php if($_SESSION['user_role'] == "super" || $_SESSION['user_role'] == "admin") { ?>
                                        <a class="btn btn-circle btn-icon-only btn-danger font-dark bold"
                                              href="index.php?page=contract-billing-view&delete=<?php echo $form->id; ?>"
                                              onclick="return confirm('Are you sure you wish to delete this form?');" title="Delete">
