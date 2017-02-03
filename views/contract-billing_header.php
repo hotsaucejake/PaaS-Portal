@@ -1,3 +1,6 @@
+<link href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css">
+
+
 <?php
 $msg = array();
 if(isset($_POST["newCB"])){
@@ -21,7 +24,7 @@ if(isset($_POST["newCB"])){
    $_POST['corusEmail'],
    $_POST['backgroundCheck'],
    $_POST['traveling'],
-   $_POST['startDate'],
+   date('Y-m-d', strtotime($_POST['startDate'])),
    $_POST['contractPeriod'],
    $_POST['drugTest'],
    $_POST['clientContact'],

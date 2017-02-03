@@ -229,13 +229,13 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="startDate">Start Date</label>
                               <div class="col-md-8">
-                                 <input id="startDate" name="startDate" type="text" placeholder="01-01-2017" class="form-control input-md" required="">
+                                 <input id="startDate" name="startDate" type="text" placeholder="2017-02-28" class="form-control input-md date-picker" required="">
                               </div>
                            </div>
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="contractPeriod">Contract Period</label>
                               <div class="col-md-8">
-                                 <input id="contractPeriod" name="contractPeriod" type="text" placeholder="6 mo." class="form-control input-md" required="">
+                                    <input id="contractPeriod" name="contractPeriod" type="text" placeholder="6 mo." class="form-control input-md" required="">
                               </div>
                            </div>
                         </div>
