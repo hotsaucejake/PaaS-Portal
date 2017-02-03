@@ -160,7 +160,7 @@
                            <div class="form-group">
                               <label class="col-md-3 control-label" for="startDate">Start Date</label>
                               <div class="col-md-9">
-                                 <input id="startDate" name="startDate" type="text" placeholder="2017-01-01" class="form-control input-md" required="">
+                                 <input id="startDate" name="startDate" type="text" placeholder="01/31/2018" class="form-control input-md date-picker" required="">
                               </div>
                            </div>
                         </div>
