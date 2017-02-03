@@ -1,3 +1,5 @@
+<link href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css">
+
 <?php
 $msg = array();
 if(isset($_POST["newPP"])){
@@ -16,7 +18,7 @@ if(isset($_POST["newPP"])){
    $_POST['salary'],
    $_POST['permFee'],
    $_POST['totalFee'],
-   $_POST['startDate'],
+   date('Y-m-d', strtotime($_POST['startDate'])),
    $_POST['recruiter'],
    $_POST['salesRep'],
    $_POST['notes'],
