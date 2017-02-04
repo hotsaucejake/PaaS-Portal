@@ -4,7 +4,11 @@
 <?php
 $msg = array();
 if(isset($_POST["newCB"])){
-
+   $drugTest;
+   foreach($_POST['drugTest'] as $selectedOption){
+      $drugTest .= $selectedOption . ',';
+   }
+   
    $insertCB = $paas->contractBilling($_POST['candidateFirst'],
    $_POST['candidateMI'],
    $_POST['candidateLast'],
@@ -20,13 +24,15 @@ if(isset($_POST["newCB"])){
    $_POST['contractRate'],
    $_POST['billRate'],
    $_POST['baseSalary'],
+   $_POST['projectType'],
    $_POST['issuedHardware'],
    $_POST['corusEmail'],
    $_POST['backgroundCheck'],
    $_POST['traveling'],
    date('Y-m-d', strtotime($_POST['startDate'])),
    $_POST['contractPeriod'],
-   $_POST['drugTest'],
+   $drugTest,
+   // $_POST['drugTest'],
    $_POST['clientContact'],
    $_POST['hiringManager'],
    $_POST['hiringEmail'],
@@ -38,6 +44,7 @@ if(isset($_POST["newCB"])){
 
    if($insertCB){
     $msg = 'New Contract Billing Form Submitted!';
+
    } else {
       $msg['error'] = 'Did not execute!';
       $msg['username'] = $_SESSION["user_name"];
@@ -56,6 +63,7 @@ if(isset($_POST["newCB"])){
       $msg['contractRate'] = $_POST['contractRate'];
       $msg['billRate'] = $_POST['billRate'];
       $msg['baseSalary'] = $_POST['baseSalary'];
+      $msg['projectType'] = $_POST['projectType'];
       $msg['issuedHardware'] = $_POST['issuedHardware'];
       $msg['corusEmail'] = $_POST['corusEmail'];
       $msg['backgroundCheck'] = $_POST['backgroundCheck'];

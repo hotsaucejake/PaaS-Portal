@@ -84,7 +84,7 @@ class PaaS {
 	public function contractBilling($candidateFirst, $candidateMI, $candidateLast,
 	$consultantCompany, $candidatePhone, $candidateEmail, $candidateAddress,
 	$clientName, $jobTitle, $jobLocation, $environment, $hireType, $contractRate,
-	$billRate, $baseSalary, $issuedHardware, $corusEmail, $backgroundCheck,
+	$billRate, $baseSalary, $projectType, $issuedHardware, $corusEmail, $backgroundCheck,
 	$traveling, $startDate, $contractPeriod, $drugTest, $clientContact,
 	$hiringManager, $hiringEmail, $hiringPhone, $recruiters, $accountManager,
 	$notes, $user_name){
@@ -104,6 +104,7 @@ class PaaS {
 		$contractRate = $this->connect()->real_escape_string($contractRate);
 		$billRate = $this->connect()->real_escape_string($billRate);
 		$baseSalary = $this->connect()->real_escape_string($baseSalary);
+		$projectType = $this->connect()->real_escape_string($projectType);
 		$issuedHardware = $this->connect()->real_escape_string($issuedHardware);
 		$corusEmail = $this->connect()->real_escape_string($corusEmail);
 		$backgroundCheck = $this->connect()->real_escape_string($backgroundCheck);
@@ -121,7 +122,7 @@ class PaaS {
 		$user_name = $this->connect()->real_escape_string($user_name);
 
 		$query = 'INSERT INTO `contract_billing`
-             (`first_name`, `mi`, `last_name`, `consultant_company`, `phone`, `email`, `address`, `client_name`, `job_title`, `job_location`, `environment`, `hire_type`, `contract_rate`, `bill_rate`, `base_salary`, `issued_hardware`, `corus_email`, `background_check`, `travel_reporting`, `start_date`, `contract_period`, `drug_test`, `client_contact`, `manager`, `manager_email`, `manager_phone`, `recruiter`, `account_manager`, `notes`, `user_name`)
+             (`first_name`, `mi`, `last_name`, `consultant_company`, `phone`, `email`, `address`, `client_name`, `job_title`, `job_location`, `environment`, `hire_type`, `contract_rate`, `bill_rate`, `base_salary`, `project_type`, `issued_hardware`, `corus_email`, `background_check`, `travel_reporting`, `start_date`, `contract_period`, `drug_test`, `client_contact`, `manager`, `manager_email`, `manager_phone`, `recruiter`, `account_manager`, `notes`, `user_name`)
              VALUES (\'' . $candidateFirst . '\',
 				 \'' . $candidateMI . '\',
 				 \'' . $candidateLast . '\',
@@ -137,6 +138,7 @@ class PaaS {
 				 \'' . $contractRate . '\',
 				 \'' . $billRate . '\',
 				 \'' . $baseSalary . '\',
+				 \'' . $projectType . '\',
 				 \'' . $issuedHardware . '\',
 				 \'' . $corusEmail . '\',
 				 \'' . $backgroundCheck . '\',
