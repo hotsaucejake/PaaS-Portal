@@ -1,0 +1,4 @@
+[submodule "classes/PHPMailer"]
+	path = classes/PHPMailer
+	url = https://github.com/PHPMailer/PHPMailer.git
+	ignore = all

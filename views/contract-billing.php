@@ -172,6 +172,17 @@
 
                         <div class="col-md-6">
                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="projectType">Project Type</label>
+                              <div class="col-md-8">
+                                 <label class="radio-inline">
+                                   <input type="radio" name="projectType" id="projectType" value="aug"> Staff Augmentation
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="projectType" id="projectType" value="sow"> SOW
+                                 </label>
+                              </div>
+                           </div>
+                           <div class="form-group">
                               <label class="col-md-4 control-label" for="issuedHardware">Issued Hardware</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
@@ -221,6 +232,7 @@
                                  </label>
                               </div>
                            </div>
+                           
                         </div>
                      </div>
 
@@ -243,7 +255,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="drugTest">Drug Test?</label>
                               <div class="col-md-8">
-                                 <select class="form-control" name="drugTest">
+                                 <select multiple class="form-control" name="drugTest[]">
                                     <option value="no">No</option>
                                     <option value="p5">Panel 5</option>
                                     <option value="p9">Panel 9</option>

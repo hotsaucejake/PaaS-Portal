@@ -2,9 +2,15 @@
 
 
 <?php
+require 'classes/PHPMailer/PHPMailerAutoload.php';
+
 $msg = array();
 if(isset($_POST["newCB"])){
-
+   $drugTest;
+   foreach($_POST['drugTest'] as $selectedOption){
+      $drugTest .= $selectedOption . ',';
+   }
+   
    $insertCB = $paas->contractBilling($_POST['candidateFirst'],
    $_POST['candidateMI'],
    $_POST['candidateLast'],
@@ -20,13 +26,15 @@ if(isset($_POST["newCB"])){
    $_POST['contractRate'],
    $_POST['billRate'],
    $_POST['baseSalary'],
+   $_POST['projectType'],
    $_POST['issuedHardware'],
    $_POST['corusEmail'],
    $_POST['backgroundCheck'],
    $_POST['traveling'],
    date('Y-m-d', strtotime($_POST['startDate'])),
    $_POST['contractPeriod'],
-   $_POST['drugTest'],
+   $drugTest,
+   // $_POST['drugTest'],
    $_POST['clientContact'],
    $_POST['hiringManager'],
    $_POST['hiringEmail'],
@@ -38,6 +46,41 @@ if(isset($_POST["newCB"])){
 
    if($insertCB){
     $msg = 'New Contract Billing Form Submitted!';
+    
+    $mail = new PHPMailer;
+
+      //$mail->SMTPDebug = 3;                  // Enable verbose debug output
+
+      $mail->isSMTP();                         // Set mailer to use SMTP
+      $mail->Host = SMTP_HOST;                 // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                  // Enable SMTP authentication
+      $mail->Username = SMTP_USER;             // SMTP username
+      $mail->Password = SMTP_PASS;             // SMTP password
+      $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = SMTP_PORT;                 // TCP port to connect to
+
+      $mail->setFrom($_SESSION['user_email']);
+      $mail->addReplyTo($_SESSION['user_email']);
+      $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
+
+      // $mail->addCC('cc@example.com');
+      // $mail->addBCC('bcc@example.com');
+
+      // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+      // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+      $mail->isHTML(true);                                  // Set email format to HTML
+
+      $mail->Subject = 'New Contract Billing Form Submitted';
+      $mail->Body    = 'A new form is waiting your approval.  You can view the <a href="http://paas.corus360.com/index.php?page=contract-billing-view">new form here. </a>';
+      $mail->AltBody = 'A new form is waiting your approval.  You can view the new form here: http://paas.corus360.com/index.php?page=contract-billing-view';
+
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          // echo 'Message has been sent';
+      }
+
    } else {
       $msg['error'] = 'Did not execute!';
       $msg['username'] = $_SESSION["user_name"];
@@ -56,6 +99,7 @@ if(isset($_POST["newCB"])){
       $msg['contractRate'] = $_POST['contractRate'];
       $msg['billRate'] = $_POST['billRate'];
       $msg['baseSalary'] = $_POST['baseSalary'];
+      $msg['projectType'] = $_POST['projectType'];
       $msg['issuedHardware'] = $_POST['issuedHardware'];
       $msg['corusEmail'] = $_POST['corusEmail'];
       $msg['backgroundCheck'] = $_POST['backgroundCheck'];
