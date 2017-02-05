@@ -1,6 +1,8 @@
 <link href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css">
 
 <?php
+require 'classes/PHPMailer/PHPMailerAutoload.php';
+
 $msg = array();
 if(isset($_POST["newPP"])){
 
@@ -25,7 +27,43 @@ if(isset($_POST["newPP"])){
    $_SESSION["user_name"]);
 
    if($insertPP){
-    $msg = 'New Permanent Placemnt Form Submitted!';
+    $msg = 'New Permanent Placement Form Submitted!';
+    
+    $mail = new PHPMailer;
+
+      //$mail->SMTPDebug = 3;                  // Enable verbose debug output
+
+      $mail->isSMTP();                         // Set mailer to use SMTP
+      $mail->Host = SMTP_HOST;                 // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                  // Enable SMTP authentication
+      $mail->Username = SMTP_USER;             // SMTP username
+      $mail->Password = SMTP_PASS;             // SMTP password
+      $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = SMTP_PORT;                 // TCP port to connect to
+
+      $mail->setFrom($_SESSION['user_email']);
+      $mail->addReplyTo($_SESSION['user_email']);
+      $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
+
+      // $mail->addCC('cc@example.com');
+      // $mail->addBCC('bcc@example.com');
+
+      // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+      // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+      $mail->isHTML(true);                                  // Set email format to HTML
+
+      $mail->Subject = 'New Permanent Placement Form Submitted';
+      $mail->Body    = 'A new form is waiting your approval.  You can view the <a href="http://paas.corus360.com/index.php?page=permanent-placement-view">new form here. </a>';
+      $mail->AltBody = 'A new form is waiting your approval.  You can view the new form here: http://paas.corus360.com/index.php?page=permanent-placement-view';
+
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          // echo 'Message has been sent';
+      }
+    
+    
    } else {
       $msg['error'] = 'Did not execute!';
       $msg['username'] = $_SESSION["user_name"];
