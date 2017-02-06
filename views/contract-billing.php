@@ -261,6 +261,7 @@
                                     <option value="p9">Panel 9</option>
                                     <option value="p10">Panel 10</option>
                                     <option value="p11">Panel 11</option>
+                                    <option value="other">Other</option>
                                  </select>
                               </div>
                            </div>
