@@ -242,7 +242,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="startDate">Start Date</label>
                                  <div class="col-md-8">
-                                    <input id="startDate" name="startDate" type="text" value="<?php echo $cb_form[0]->start_date; ?>" class="form-control input-md" required="">
+                                    <input id="startDate" name="startDate" type="text" value="<?php echo date('m/d/Y', strtotime($cb_form[0]->start_date)); ?>" class="form-control input-md date-picker" required="">
                                  </div>
                               </div>
                               <div class="form-group">

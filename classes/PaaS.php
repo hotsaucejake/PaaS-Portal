@@ -212,7 +212,7 @@ class PaaS {
 	public function updateContractBilling($update_id, $candidateFirst, $candidateMI, $candidateLast,
 	$consultantCompany, $candidatePhone, $candidateEmail, $candidateAddress,
 	$clientName, $jobTitle, $jobLocation, $environment, $hireType, $contractRate,
-	$billRate, $baseSalary, $issuedHardware, $corusEmail, $backgroundCheck,
+	$billRate, $baseSalary, $projectType, $issuedHardware, $corusEmail, $backgroundCheck,
 	$traveling, $startDate, $contractPeriod, $drugTest, $clientContact,
 	$hiringManager, $hiringEmail, $hiringPhone, $recruiters, $accountManager,
 	$notes){
@@ -233,6 +233,7 @@ class PaaS {
 		$contractRate = $this->connect()->real_escape_string($contractRate);
 		$billRate = $this->connect()->real_escape_string($billRate);
 		$baseSalary = $this->connect()->real_escape_string($baseSalary);
+		$projectType = $this->connect()->real_escape_string($projectType);
 		$issuedHardware = $this->connect()->real_escape_string($issuedHardware);
 		$corusEmail = $this->connect()->real_escape_string($corusEmail);
 		$backgroundCheck = $this->connect()->real_escape_string($backgroundCheck);
@@ -265,6 +266,7 @@ class PaaS {
 						`contract_rate` = \'' . $contractRate . '\',
 						`bill_rate` = \'' . $billRate . '\',
 						`base_salary` = \'' . $baseSalary . '\',
+						`project_type` = \'' . $projectType . '\',
 						`issued_hardware` = \'' . $issuedHardware . '\',
 						`corus_email` = \'' . $corusEmail . '\',
 						`background_check` = \'' . $backgroundCheck . '\',
