@@ -131,6 +131,9 @@
                                  <label class="radio-inline">
                                    <input type="radio" name="environment" id="environment" value="remote"> Remote
                                  </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="environment" id="environment" value="both"> Both
+                                 </label>
                               </div>
                            </div>
 

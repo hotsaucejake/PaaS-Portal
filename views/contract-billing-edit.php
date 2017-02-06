@@ -133,6 +133,9 @@
                                     <label class="radio-inline">
                                       <input type="radio" name="environment" id="environment" value="remote" <?php if($cb_form[0]->environment == "remote") { echo "checked"; } ?> > Remote
                                     </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="environment" id="environment" value="both" <?php if($cb_form[0]->environment == "both") { echo "checked"; } ?> > Both
+                                    </label>
                                  </div>
                               </div>
 
