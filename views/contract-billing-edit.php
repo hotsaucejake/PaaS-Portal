@@ -174,6 +174,17 @@
 
                            <div class="col-md-6">
                               <div class="form-group">
+                              <label class="col-md-4 control-label" for="projectType">Project Type</label>
+                              <div class="col-md-8">
+                                 <label class="radio-inline">
+                                   <input type="radio" name="projectType" id="projectType" value="aug" <?php if($cb_form[0]->project_type == "aug") { echo "checked"; } ?> > Staff Augmentation
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="projectType" id="projectType" value="sow" <?php if($cb_form[0]->project_type == "sow") { echo "checked"; } ?> > SOW
+                                 </label>
+                              </div>
+                           </div>
+                              <div class="form-group">
                                  <label class="col-md-4 control-label" for="issuedHardware">Issued Hardware</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
@@ -231,7 +242,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="startDate">Start Date</label>
                                  <div class="col-md-8">
-                                    <input id="startDate" name="startDate" type="text" value="<?php echo $cb_form[0]->start_date; ?>" class="form-control input-md" required="">
+                                    <input id="startDate" name="startDate" type="text" value="<?php echo date('m/d/Y', strtotime($cb_form[0]->start_date)); ?>" class="form-control input-md date-picker" required="">
                                  </div>
                               </div>
                               <div class="form-group">
@@ -245,12 +256,17 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="drugTest">Drug Test?</label>
                                  <div class="col-md-8">
-                                    <select class="form-control" name="drugTest">
-                                       <option value="no" <?php if($cb_form[0]->drug_test == "no") { echo "selected"; } ?> >No</option>
-                                       <option value="p5" <?php if($cb_form[0]->drug_test == "p5") { echo "selected"; } ?> >Panel 5</option>
-                                       <option value="p9" <?php if($cb_form[0]->drug_test == "p9") { echo "selected"; } ?> >Panel 9</option>
-                                       <option value="p10" <?php if($cb_form[0]->drug_test == "p10") { echo "selected"; } ?> >Panel 10</option>
-                                       <option value="p11" <?php if($cb_form[0]->drug_test == "p11") { echo "selected"; } ?> >Panel 11</option>
+                                    <select multiple class="form-control" name="drugTest[]">
+                                       <?php
+                                          // break the comma separated string down into array
+                                          $dtests = explode(",", $cb_form[0]->drug_test);
+                                       ?>
+                                       <option value="no" <?php foreach($dtests as $dtest){ if($dtest == "no") { echo "selected"; }} ?> >No</option>
+                                       <option value="p5" <?php foreach($dtests as $dtest){ if($dtest == "p5") { echo "selected"; }} ?> >Panel 5</option>
+                                       <option value="p9" <?php foreach($dtests as $dtest){ if($dtest == "p9") { echo "selected"; }} ?> >Panel 9</option>
+                                       <option value="p10" <?php foreach($dtests as $dtest){ if($dtest == "p10") { echo "selected"; }} ?> >Panel 10</option>
+                                       <option value="p11" <?php foreach($dtests as $dtest){ if($dtest == "p11") { echo "selected"; }} ?> >Panel 11</option>
+                                       <option value="other" <?php foreach($dtests as $dtest){ if($dtest == "other") { echo "selected"; }} ?> >Other</option>
                                     </select>
                                  </div>
                               </div>
