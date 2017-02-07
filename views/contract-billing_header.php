@@ -59,9 +59,11 @@ if(isset($_POST["newCB"])){
       $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
       $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-      $mail->setFrom($_SESSION['user_email']);
-      $mail->addReplyTo($_SESSION['user_email']);
+      $mail->setFrom('jcrowder@corus360.com', 'Jakob Crowder');
+      $mail->addReplyTo('jcrowder@corus360.com', 'Jakob Crowder');
       $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
+      $mail->addAddress('lczuper@corus360.com', 'Liz Czuper');     // Add a recipient
+      $mail->addAddress('kcoile@corus360.com');     // Add a recipient
 
       // $mail->addCC('cc@example.com');
       // $mail->addBCC('bcc@example.com');
