@@ -45,7 +45,7 @@
                               </div>
                               <label class="col-md-1 control-label" for="candidateMI">MI</label>
                               <div class="col-md-1">
-                                 <input id="candidateMI" name="candidateMI" type="text" placeholder="MI" class="form-control input-md" required="">
+                                 <input id="candidateMI" name="candidateMI" type="text" placeholder="MI" class="form-control input-md">
                               </div>
                               <label class="col-md-2 control-label" for="candidateLast">Last Name</label>
                               <div class="col-md-3">
@@ -58,7 +58,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="consultantCompany">Consultant Company Name</label>
                               <div class="col-md-8">
-                                 <input id="consultantCompany" name="consultantCompany" type="text" placeholder="(Corp to Corp)" class="form-control input-md" required="">
+                                 <input id="consultantCompany" name="consultantCompany" type="text" placeholder="(Corp to Corp)" class="form-control input-md">
                               </div>
                            </div>
 
@@ -235,7 +235,7 @@
                                  </label>
                               </div>
                            </div>
-                           
+
                         </div>
                      </div>
 
