@@ -182,7 +182,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','B',12);
          $pdf->Cell(60, 10, 'Start Date:', 0, 0, 'R');
          $pdf->SetFont('Arial','',10);
-         $pdf->Cell(0, 10, $ppform[0]->start_date, 0, 0, 'L');
+         $pdf->Cell(0, 10, date('m-d-Y', strtotime($ppform[0]->start_date)), 0, 0, 'L');
 
          $pdf->Ln(10);
 
@@ -404,7 +404,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','B',12);
          $pdf->Cell(50, 10, 'Start Date:', 0, 0);
          $pdf->SetFont('Arial','',10);
-         $pdf->Cell(40, 10, $cbform[0]->start_date, 0, 0);
+         $pdf->Cell(40, 10, date('m-d-Y', strtotime($cbform[0]->start_date)), 0, 0);
 
          $pdf->SetFont('Arial','B',12);
          $pdf->Cell(50, 10, 'Drug Test:', 0, 0, 'R');
