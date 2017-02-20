@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="portlet-body">
-               <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="user_list">
+               <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="contract_billing">
                   <thead>
                       <tr>
                           <th class="min-desktop">ID</th>
@@ -36,6 +36,7 @@
                           <th class="all">Title</th>
                           <th class="all">Created</th>
                           <th class="all">User</th>
+                          <th class="all">Tools</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -78,7 +79,7 @@
                            echo '</td>';
                            echo '</tr>';
                         }
-                       
+
                      }
                       ?>
                   </tbody>
