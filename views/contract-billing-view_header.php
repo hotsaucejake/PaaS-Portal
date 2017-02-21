@@ -3,7 +3,7 @@
 
 <?php
 require 'classes/PHPMailer/PHPMailerAutoload.php';
-require('classes/PDF.php');
+require('classes/GridPDF.php');
 
 
 if(isset($_GET['approve'])){
@@ -17,6 +17,20 @@ if(isset($_GET['approve'])){
          $msg = '<h3>Approved!</h3>';
 
 
+         $sql = 'SELECT *
+         FROM contract_billing
+         WHERE id = ' . $_GET['approve'];
+         $cbform = $paas->query($sql);
+
+         $title = 'New Contractor Request';
+         $doc_id = $cbform[0]->id; // id #
+         $un = $cbform[0]->user_name; // user_name
+         $created = date('Y-m-d', strtotime($cbform[0]->created)); // created date
+
+         $pdf = new GridPDF();
+
+         $pdfstring = $pdf->generateCBEmailPDF($cbform);
+
          $mail = new PHPMailer;
          //$mail->SMTPDebug = 3;                  // Enable verbose debug output
          $mail->isSMTP();                         // Set mailer to use SMTP
@@ -26,27 +40,33 @@ if(isset($_GET['approve'])){
          $mail->Password = SMTP_PASS;             // SMTP password
          $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
          $mail->Port = SMTP_PORT;                 // TCP port to connect to
+
          $mail->setFrom('jcrowder@corus360.com', 'Jakob Crowder');
          $mail->addReplyTo('jcrowder@corus360.com', 'Jakob Crowder');
+
          $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
-         // $mail->addAddress('lczuper@corus360.com', 'Liz Czuper');     // Add a recipient
-         // $mail->addAddress('kcoile@corus360.com');     // Add a recipient
-         // $mail->addCC('cc@example.com');
-         // $mail->addBCC('bcc@example.com');
-         // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-         //$mail->addAttachment($pdf->Output(), 'new.pdf');    // Optional name
-         $mail->isHTML(true);                                  // Set email format to HTML
-         $mail->Subject = 'New Contract Billing Form Approved';
-         $mail->Body    = 'You can view the <a href="http://paas.corus360.com/index.php?page=contract-billing-view">approved form here. </a>';
-         $mail->AltBody = 'You can view the approved form here: http://paas.corus360.com/index.php?page=contract-billing-view';
+
+         $stringAttachment = date('Y-m-d', strtotime($cbform[0]->created));
+         $stringAttachment .= '_PP_';
+         $stringAttachment .= preg_replace('/\s+/', '', $cbform[0]->first_name);
+         $stringAttachment .= preg_replace('/\s+/', '', $cbform[0]->last_name);
+         $stringAttachment .= '_';
+         $stringAttachment .= preg_replace('/\s+/', '', $cbform[0]->client_name);
+         $stringAttachment .= '.pdf';
+
+         $mail->addStringAttachment($pdfstring, $stringAttachment);         // Add attachments
+         $mail->Subject = $cbform[0]->first_name . ' ' . $cbform[0]->last_name . ' Contract Billing Grid';
+         $mail->Body    = '<strong>Start Date:</strong> ' . $cbform[0]->start_date;
+         $mail->Body    .= '<br /> <strong>Background Check:</strong> ' . $cbform[0]->background_check;
+         $mail->Body    .= '<br /> <strong>Drug Test:</strong> ' . substr($cbform[0]->drug_test, 0, -1);
+         $mail->Body    .= '<br /><br /> <strong>Notes:</strong> ' . nl2br($cbform[0]->notes);
+         $mail->AltBody = 'Start Date: ' . $cbform[0]->start_date;
          if(!$mail->send()) {
              echo 'Message could not be sent.';
              echo 'Mailer Error: ' . $mail->ErrorInfo;
          } else {
              // echo 'Message has been sent';
          }
-
-
 
 
 
