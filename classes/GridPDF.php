@@ -1,7 +1,7 @@
 <?php
 require('classes/fpdf/fpdf.php');
 
-class PermanentPlacementPDF extends FPDF
+class GridPDF extends FPDF
 {
    // Page header
    function Header()
@@ -35,7 +35,7 @@ class PermanentPlacementPDF extends FPDF
        $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,1,'C');
    }
 
-   function generatePDF($ppform){
+   function generatePPEmailPDF($ppform){
 
       $this->AliasNbPages();
       $this->AddPage();
@@ -177,8 +177,6 @@ class PermanentPlacementPDF extends FPDF
       $this->MultiCell(0, 6, $ppform[0]->special_notes, 0, 'L');
 
       return $this->Output("", "S");
-
-      //$this->Output('pdfs/permanent-placement/' . date('Y-m-d', strtotime($ppform[0]->created)) . '-' . preg_replace('/\s+/', '', $ppform[0]->customer_name) . '.pdf', 'F');
    }
 
 }

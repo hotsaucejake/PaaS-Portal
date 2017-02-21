@@ -3,7 +3,7 @@
 
 <?php
 require 'classes/PHPMailer/PHPMailerAutoload.php';
-require('classes/PermanentPlacementPDF.php');
+require('classes/GridPDF.php');
 
 if(isset($_GET['approve'])){
    $sql = 'UPDATE permanent_placement
@@ -25,9 +25,9 @@ if(isset($_GET['approve'])){
          $un = $ppform[0]->user_name; // user_name
          $created = date('Y-m-d', strtotime($ppform[0]->created)); // created date
 
-         $pdf = new PermanentPlacementPDF();
+         $pdf = new GridPDF();
 
-         $pdfstring = $pdf->generateEmailPDF($ppform);
+         $pdfstring = $pdf->generatePPEmailPDF($ppform);
 
          $mail = new PHPMailer;
          //$mail->SMTPDebug = 3;                  // Enable verbose debug output
