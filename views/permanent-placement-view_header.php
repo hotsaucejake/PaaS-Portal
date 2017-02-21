@@ -43,6 +43,8 @@ if(isset($_GET['approve'])){
          $mail->addReplyTo('jcrowder@corus360.com', 'Jakob Crowder');
 
          $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
+         $mail->addAddress('lczuper@corus360.com', 'Liz Czuper');     // Add a recipient
+         $mail->addAddress('kcoile@corus360.com');     // Add a recipient
 
          $mail->addStringAttachment($pdfstring, date('Y-m-d', strtotime($ppform[0]->created)) . '_PP_' . preg_replace('/\s+/', '', $ppform[0]->placement_name) . '.pdf');         // Add attachments
          $mail->Subject = $ppform[0]->placement_name . ' Permanent Placement Grid';
