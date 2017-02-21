@@ -12,43 +12,9 @@ $login = new Login();
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
    require_once('classes/PaaS.php');
-   require('classes/fpdf/fpdf.php');
+   require('classes/PDF.php');
    $paas = new PaaS(DB_USER, DB_PASS, DB_NAME, DB_HOST);
    // Is this the ONLY call to the DB that I need?
-   class PDF extends FPDF
-   {
-      // Page header
-      function Header()
-      {
-          global $title;
-          // Logo
-          $this->Image('img/corus360.png',88,6, -600);
-          // Arial bold 15
-          $this->SetFont('Arial','B',18);
-          // Line break
-          $this->Ln(15);
-          // Title
-          $this->Cell(190,10,$title,0,0,'C');
-          // Line break
-          $this->Ln(15);
-      }
-
-      // Page footer
-      function Footer()
-      {
-          global $doc_id; // id #
-          global $un; // user_name
-          global $created; // created date
-          // Position at 1.5 cm from bottom
-          $this->SetY(-15);
-          // Arial italic 8
-          $this->SetFont('Arial','I',8);
-          // Page number
-          $this->Cell(0,10, $doc_id . '_' . $un . '_' . $created,0,0,'C');
-          $this->Ln(5);
-          $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,1,'C');
-      }
-   }
 
 
    if(isset($_GET['form']) && isset($_GET['id'])){
@@ -205,7 +171,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','',10);
          $pdf->MultiCell(0, 6, $ppform[0]->special_notes, 0, 'L');
 
-
+         // $pdf->Output('pdfs/permanent-placement/' . date('Y-m-d', strtotime($ppform[0]->created)) . '-' . preg_replace('/\s+/', '', $ppform[0]->customer_name) . '.pdf', 'F');
          $pdf->Output();
       }
       elseif($_GET['form'] == 'contract-billing'){ // New Contractor Request
@@ -487,6 +453,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','',10);
          $pdf->MultiCell(0, 6, $cbform[0]->address, 0, 'L');
 
+      //    $pdf->Output('pdfs/contract-billing/' . date('Y-m-d', strtotime($cbform[0]->created)) . '-' . preg_replace('/\s+/', '', $cbform[0]->last_name) . '-' . preg_replace('/\s+/', '', $cbform[0]->first_name) . '.pdf', 'F');
          $pdf->Output();
       }
       else {

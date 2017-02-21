@@ -2,7 +2,3 @@
 	path = classes/PHPMailer
 	url = https://github.com/PHPMailer/PHPMailer.git
 	ignore = all
-[submodule "classes/mpdf"]
-	path = classes/mpdf
-	url = https://github.com/mpdf/mpdf.git
-	ignore = all

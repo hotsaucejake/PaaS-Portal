@@ -6,3 +6,4 @@ plugins/config.php
 config/config.php
 plugins/plugin.php
 assets/
+pdfs/
