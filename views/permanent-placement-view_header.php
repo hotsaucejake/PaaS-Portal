@@ -46,7 +46,8 @@ if(isset($_GET['approve'])){
 
          $mail->addStringAttachment($pdfstring, date('Y-m-d', strtotime($ppform[0]->created)) . '_PP_' . preg_replace('/\s+/', '', $ppform[0]->placement_name) . '.pdf');         // Add attachments
          $mail->Subject = $ppform[0]->placement_name . ' Permanent Placement Grid';
-         $mail->Body    = 'Start Date: ' . $ppform[0]->start_date . '<br />' . 'Position: ' . $ppform[0]->position;
+         $mail->Body    = '<strong>Start Date:</strong> ' . $ppform[0]->start_date;
+         $mail->Body    .= '<br /> <strong>Position:</strong> ' . $ppform[0]->position;
          $mail->AltBody = 'Start Date: ' . $ppform[0]->start_date . ' and Position: ' . $ppform[0]->position;
          if(!$mail->send()) {
              echo 'Message could not be sent.';
