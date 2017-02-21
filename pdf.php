@@ -171,7 +171,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','',10);
          $pdf->MultiCell(0, 6, $ppform[0]->special_notes, 0, 'L');
 
-         $pdf->Output('pdfs/permanent-placement/' . date('Y-m-d', strtotime($ppform[0]->created)) . '-' . preg_replace('/\s+/', '', $ppform[0]->customer_name) . '.pdf', 'F');
+         // $pdf->Output('pdfs/permanent-placement/' . date('Y-m-d', strtotime($ppform[0]->created)) . '-' . preg_replace('/\s+/', '', $ppform[0]->customer_name) . '.pdf', 'F');
          $pdf->Output();
       }
       elseif($_GET['form'] == 'contract-billing'){ // New Contractor Request
@@ -453,7 +453,7 @@ if ($login->isUserLoggedIn() == true) {
          $pdf->SetFont('Arial','',10);
          $pdf->MultiCell(0, 6, $cbform[0]->address, 0, 'L');
 
-         $pdf->Output('pdfs/contract-billing/' . date('Y-m-d', strtotime($cbform[0]->created)) . '-' . preg_replace('/\s+/', '', $cbform[0]->last_name) . '-' . preg_replace('/\s+/', '', $cbform[0]->first_name) . '.pdf', 'F');
+      //    $pdf->Output('pdfs/contract-billing/' . date('Y-m-d', strtotime($cbform[0]->created)) . '-' . preg_replace('/\s+/', '', $cbform[0]->last_name) . '-' . preg_replace('/\s+/', '', $cbform[0]->first_name) . '.pdf', 'F');
          $pdf->Output();
       }
       else {
