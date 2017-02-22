@@ -216,13 +216,13 @@
                                  <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="1" <?php if($cb_form[0]->background_check == "y") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y" <?php if($cb_form[0]->background_check == "y") { echo "checked"; } ?> > Yes
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0" <?php if($cb_form[0]->background_check == "n") { echo "checked"; } ?> > No
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="n" <?php if($cb_form[0]->background_check == "n") { echo "checked"; } ?> > No
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="0" <?php if($cb_form[0]->background_check == "c") { echo "checked"; } ?> > Completed
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="c" <?php if($cb_form[0]->background_check == "c") { echo "checked"; } ?> > Completed
                                     </label>
                                  </div>
                               </div>
