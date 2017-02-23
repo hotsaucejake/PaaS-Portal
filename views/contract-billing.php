@@ -268,6 +268,17 @@
                                  </select>
                               </div>
                            </div>
+                           <div class="form-group">
+                              <label class="col-md-4 control-label" for="benefits">Benefits?</label>
+                              <div class="col-md-8">
+                                 <label class="radio-inline">
+                                   <input type="radio" name="benefits" id="benefits" value="1"> Yes
+                                 </label>
+                                 <label class="radio-inline">
+                                   <input type="radio" name="benefits" id="benefits" value="0"> No
+                                 </label>
+                              </div>
+                           </div>
                         </div>
                      </div>
 

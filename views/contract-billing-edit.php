@@ -273,6 +273,17 @@
                                     </select>
                                  </div>
                               </div>
+                              <div class="form-group">
+                                 <label class="col-md-4 control-label" for="benefits">Benefits?</label>
+                                 <div class="col-md-8">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="benefits" id="benefits" value="1" <?php if($cb_form[0]->benefits == "1") { echo "checked"; } ?> > Yes
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="benefits" id="benefits" value="0" <?php if($cb_form[0]->benefits == "0") { echo "checked"; } ?> > No
+                                    </label>
+                                 </div>
+                              </div>
                            </div>
                         </div>
 

@@ -32,6 +32,7 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
    date('Y-m-d', strtotime($_POST['startDate'])),
    $_POST['contractPeriod'],
    $drugTest,
+   $_POST['benefits'],
    $_POST['clientContact'],
    $_POST['hiringManager'],
    $_POST['hiringEmail'],

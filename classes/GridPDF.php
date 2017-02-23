@@ -387,6 +387,17 @@ class GridPDF extends FPDF
       $this->SetFont('Arial','',10);
       $this->Cell(40, 10, $cbform[0]->contract_period, 0, 0);
 
+      $this->SetFont('Arial','B',12);
+      $this->Cell(50, 10, 'Benefits?', 0, 0, 'R');
+      $this->SetFont('Arial','',10);
+      if ($cbform[0]->benefits == 0) {
+         $this->Cell(0, 10, "No", 0, 0);
+      } elseif ($cbform[0]->benefits == 1) {
+         $this->Cell(0, 10, "Yes", 0, 0);
+      } else {
+         $this->Cell(0, 10, $cbform[0]->benefits, 0, 0);
+      }
+
       $this->Ln(10);
 
       $this->Line(10, 195, 200, 195);

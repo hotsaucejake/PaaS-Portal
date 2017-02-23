@@ -85,7 +85,7 @@ class PaaS {
 	$consultantCompany, $candidatePhone, $candidateEmail, $candidateAddress,
 	$clientName, $jobTitle, $jobLocation, $environment, $hireType, $contractRate,
 	$billRate, $baseSalary, $projectType, $issuedHardware, $corusEmail, $backgroundCheck,
-	$traveling, $startDate, $contractPeriod, $drugTest, $clientContact,
+	$traveling, $startDate, $contractPeriod, $drugTest, $benefits, $clientContact,
 	$hiringManager, $hiringEmail, $hiringPhone, $recruiters, $accountManager,
 	$notes, $user_name){
 
@@ -112,6 +112,7 @@ class PaaS {
 		$startDate = $this->connect()->real_escape_string($startDate);
 		$contractPeriod = $this->connect()->real_escape_string($contractPeriod);
 		$drugTest = $this->connect()->real_escape_string($drugTest);
+		$benefits = $this->connect()->real_escape_string($benefits);
 		$clientContact = $this->connect()->real_escape_string($clientContact);
 		$hiringManager = $this->connect()->real_escape_string($hiringManager);
 		$hiringEmail = $this->connect()->real_escape_string($hiringEmail);
@@ -122,7 +123,7 @@ class PaaS {
 		$user_name = $this->connect()->real_escape_string($user_name);
 
 		$query = 'INSERT INTO `contract_billing`
-             (`first_name`, `mi`, `last_name`, `consultant_company`, `phone`, `email`, `address`, `client_name`, `job_title`, `job_location`, `environment`, `hire_type`, `contract_rate`, `bill_rate`, `base_salary`, `project_type`, `issued_hardware`, `corus_email`, `background_check`, `travel_reporting`, `start_date`, `contract_period`, `drug_test`, `client_contact`, `manager`, `manager_email`, `manager_phone`, `recruiter`, `account_manager`, `notes`, `user_name`)
+             (`first_name`, `mi`, `last_name`, `consultant_company`, `phone`, `email`, `address`, `client_name`, `job_title`, `job_location`, `environment`, `hire_type`, `contract_rate`, `bill_rate`, `base_salary`, `project_type`, `issued_hardware`, `corus_email`, `background_check`, `travel_reporting`, `start_date`, `contract_period`, `drug_test`, `benefits`, `client_contact`, `manager`, `manager_email`, `manager_phone`, `recruiter`, `account_manager`, `notes`, `user_name`)
              VALUES (\'' . $candidateFirst . '\',
 				 \'' . $candidateMI . '\',
 				 \'' . $candidateLast . '\',
@@ -146,6 +147,7 @@ class PaaS {
 				 \'' . $startDate . '\',
 				 \'' . $contractPeriod . '\',
 				 \'' . $drugTest . '\',
+				 \'' . $benefits . '\',
 				 \'' . $clientContact . '\',
 				 \'' . $hiringManager . '\',
 				 \'' . $hiringEmail . '\',
@@ -213,7 +215,7 @@ class PaaS {
 	$consultantCompany, $candidatePhone, $candidateEmail, $candidateAddress,
 	$clientName, $jobTitle, $jobLocation, $environment, $hireType, $contractRate,
 	$billRate, $baseSalary, $projectType, $issuedHardware, $corusEmail, $backgroundCheck,
-	$traveling, $startDate, $contractPeriod, $drugTest, $clientContact,
+	$traveling, $startDate, $contractPeriod, $drugTest, $benefits, $clientContact,
 	$hiringManager, $hiringEmail, $hiringPhone, $recruiters, $accountManager,
 	$notes){
 
@@ -241,6 +243,7 @@ class PaaS {
 		$startDate = $this->connect()->real_escape_string($startDate);
 		$contractPeriod = $this->connect()->real_escape_string($contractPeriod);
 		$drugTest = $this->connect()->real_escape_string($drugTest);
+		$benefits = $this->connect()->real_escape_string($benefits);
 		$clientContact = $this->connect()->real_escape_string($clientContact);
 		$hiringManager = $this->connect()->real_escape_string($hiringManager);
 		$hiringEmail = $this->connect()->real_escape_string($hiringEmail);
@@ -274,6 +277,7 @@ class PaaS {
 						`start_date` = \'' . $startDate . '\',
 						`contract_period` = \'' . $contractPeriod . '\',
 						`drug_test` = \'' . $drugTest . '\',
+						`benefits` = \'' . $benefits . '\',
 						`client_contact` = \'' . $clientContact . '\',
 						`manager` = \'' . $hiringManager . '\',
 						`manager_email` = \'' . $hiringEmail . '\',

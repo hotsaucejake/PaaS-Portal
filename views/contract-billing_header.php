@@ -35,6 +35,7 @@ if(isset($_POST["newCB"])){
    $_POST['contractPeriod'],
    $drugTest,
    // $_POST['drugTest'],
+   $_POST['benefits'],
    $_POST['clientContact'],
    $_POST['hiringManager'],
    $_POST['hiringEmail'],
@@ -104,6 +105,7 @@ if(isset($_POST["newCB"])){
       $msg['startDate'] = $_POST['startDate'];
       $msg['contractPeriod'] = $_POST['contractPeriod'];
       $msg['drugTest'] = $_POST['drugTest'];
+      $msg['benefits'] = $_POST['benefits'];
       $msg['clientContact'] = $_POST['clientContact'];
       $msg['hiringManager'] = $_POST['hiringManager'];
       $msg['hiringEmail'] = $_POST['hiringEmail'];
