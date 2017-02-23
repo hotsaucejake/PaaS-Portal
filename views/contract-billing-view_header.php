@@ -41,11 +41,11 @@ if(isset($_GET['approve'])){
          $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
          $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-         $mail->setFrom('jcrowder@corus360.com', 'Jakob Crowder');
-         $mail->addReplyTo('jcrowder@corus360.com', 'Jakob Crowder');
+         $mail->setFrom(JCROWDER);
+         $mail->addReplyTo(JCROWDER);
 
-         $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
-         $mail->addAddress('NewHireGrids@corus360.com');     // Add a recipient
+         $mail->addAddress(JCROWDER);              // Add a recipient
+         $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
 
          $stringAttachment = date('Y-m-d', strtotime($cbform[0]->created));
          $stringAttachment .= '_PP_';

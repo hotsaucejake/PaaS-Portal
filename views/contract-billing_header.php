@@ -10,7 +10,7 @@ if(isset($_POST["newCB"])){
    foreach($_POST['drugTest'] as $selectedOption){
       $drugTest .= $selectedOption . ',';
    }
-   
+
    $insertCB = $paas->contractBilling($_POST['candidateFirst'],
    $_POST['candidateMI'],
    $_POST['candidateLast'],
@@ -46,7 +46,7 @@ if(isset($_POST["newCB"])){
 
    if($insertCB){
     $msg = 'New Contract Billing Form Submitted!';
-    
+
     $mail = new PHPMailer;
 
       //$mail->SMTPDebug = 3;                  // Enable verbose debug output
@@ -59,18 +59,13 @@ if(isset($_POST["newCB"])){
       $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
       $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-      $mail->setFrom('jcrowder@corus360.com', 'Jakob Crowder');
-      $mail->addReplyTo('jcrowder@corus360.com', 'Jakob Crowder');
-      $mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
-      $mail->addAddress('lczuper@corus360.com', 'Liz Czuper');     // Add a recipient
-      $mail->addAddress('kcoile@corus360.com');     // Add a recipient
+      $mail->setFrom(JCROWDER);
+      $mail->addReplyTo(JCROWDER);
+      $mail->addAddress(JCROWDER);             // Add a recipient
+      $mail->addAddress(LCZUPER);              // Add a recipient
+      $mail->addAddress(LCZUPER);              // Add a recipient
 
-      // $mail->addCC('cc@example.com');
-      // $mail->addBCC('bcc@example.com');
-
-      // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-      // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-      $mail->isHTML(true);                                  // Set email format to HTML
+      $mail->isHTML(true);                     // Set email format to HTML
 
       $mail->Subject = 'New Contract Billing Form Submitted';
       $mail->Body    = 'A new form is waiting your approval.  You can view the <a href="http://paas.corus360.com/index.php?page=contract-billing-view">new form here. </a>';
@@ -116,6 +111,6 @@ if(isset($_POST["newCB"])){
       $msg['recruiters'] = $_POST['recruiters'];
       $msg['accountManager'] = $_POST['accountManager'];
       $msg['notes'] = $_POST['notes'];
-      
+
    }
 }

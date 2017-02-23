@@ -13,9 +13,9 @@ $mail->Password = SMTP_PASS;             // SMTP password
 $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
 $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-$mail->setFrom($_SESSION['user_email']);
-$mail->addReplyTo($_SESSION['user_email']);
-$mail->addAddress('jcrowder@corus360.com', 'Jakob Crowder');     // Add a recipient
+$mail->setFrom(JCROWDER);
+$mail->addReplyTo(JCROWDER);
+$mail->addAddress(JCROWDER);     // Add a recipient
 
 // $mail->addCC('cc@example.com');
 // $mail->addBCC('bcc@example.com');
