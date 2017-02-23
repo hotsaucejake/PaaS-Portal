@@ -176,7 +176,7 @@ class GridPDF extends FPDF
       $this->SetFont('Arial','',10);
       $this->MultiCell(0, 6, $ppform[0]->special_notes, 0, 'L');
 
-      return $this->Output("", "S");
+      return $this;
    }
 
    function generateCBEmailPDF($cbform){
@@ -445,7 +445,7 @@ class GridPDF extends FPDF
       $this->SetFont('Arial','',10);
       $this->MultiCell(0, 6, $cbform[0]->address, 0, 'L');
 
-      return $this->Output("", "S");
+      return $this;
    }
 
 }

@@ -27,7 +27,8 @@ if(isset($_GET['approve'])){
 
          $pdf = new GridPDF();
 
-         $pdfstring = $pdf->generatePPEmailPDF($ppform);
+         $generatedPDF = $pdf->generatePPEmailPDF($ppform);
+         $pdfstring = $generatedPDF->Output("", "S");
 
          $mail = new PHPMailer;
          //$mail->SMTPDebug = 3;                  // Enable verbose debug output

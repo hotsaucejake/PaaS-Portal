@@ -29,7 +29,8 @@ if(isset($_GET['approve'])){
 
          $pdf = new GridPDF();
 
-         $pdfstring = $pdf->generateCBEmailPDF($cbform);
+         $generatedPDF = $pdf->generateCBEmailPDF($cbform);
+         $pdfstring = $generatedPDF->Output("", "S");
 
          $mail = new PHPMailer;
          //$mail->SMTPDebug = 3;                  // Enable verbose debug output
