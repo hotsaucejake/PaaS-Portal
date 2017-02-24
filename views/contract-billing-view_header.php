@@ -42,11 +42,11 @@ if(isset($_GET['approve'])){
          $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
          $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-         $mail->setFrom(JCROWDER);
-         $mail->addReplyTo(JCROWDER);
+         $mail->setFrom(KCOILE);
+         $mail->addReplyTo(KCOILE);
 
-         $mail->addAddress(JCROWDER);              // Add a recipient
          $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
+         $mail->addCC(JCROWDER);              // Add a recipient
 
          $stringAttachment = date('Y-m-d', strtotime($cbform[0]->created));
          $stringAttachment .= '_PP_';

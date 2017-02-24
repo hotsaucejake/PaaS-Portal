@@ -41,11 +41,12 @@ if(isset($_POST["newPP"])){
       $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
       $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-      $mail->setFrom(JCROWDER);
-      $mail->addReplyTo(JCROWDER);
-      $mail->addAddress(JCROWDER);             // Add a recipient
+      $mail->setFrom(KCOILE);
+      $mail->addReplyTo(KCOILE);
+
       $mail->addAddress(LCZUPER);              // Add a recipient
       $mail->addAddress(KCOILE);               // Add a recipient
+      $mail->addCC(JCROWDER);                  // Add a recipient
 
       $mail->isHTML(true);                     // Set email format to HTML
 

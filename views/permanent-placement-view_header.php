@@ -40,11 +40,11 @@ if(isset($_GET['approve'])){
          $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
          $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-         $mail->setFrom(JCROWDER);
-         $mail->addReplyTo(JCROWDER);
+         $mail->setFrom(KCOILE);
+         $mail->addReplyTo(KCOILE);
 
-         $mail->addAddress(JCROWDER);     // Add a recipient
-         $mail->addAddress(NEWHIREGRIDS);     // Add a recipient
+         $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
+         $mail->addCC(JCROWDER);              // Add a recipient
 
          $mail->addStringAttachment($pdfstring, date('Y-m-d', strtotime($ppform[0]->created)) . '_PP_' . preg_replace('/\s+/', '', $ppform[0]->placement_name) . '.pdf');         // Add attachments
          $mail->Subject = $ppform[0]->placement_name . ' Permanent Placement Grid';
