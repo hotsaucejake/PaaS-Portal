@@ -203,7 +203,8 @@ class PaaS {
 						`start_date` = \'' . $start_date . '\',
 						`recruiter` = \'' . $recruiter . '\',
 						`sales_rep` = \'' . $sales_rep . '\',
-						`special_notes` = \'' . $special_notes . '\'
+						`special_notes` = \'' . $special_notes . '\',
+						`approved` = \'0\'
 						WHERE `id` = \'' . $update_id . '\' ';
 
 		$db = $this->connect();
@@ -284,7 +285,8 @@ class PaaS {
 						`manager_phone` = \'' . $hiringPhone . '\',
 						`recruiter` = \'' . $recruiters . '\',
 						`account_manager` = \'' . $accountManager . '\',
-						`notes` = \'' . $notes . '\'
+						`notes` = \'' . $notes . '\',
+						`approved` = \'0\'
 						WHERE `id` = \'' . $update_id . '\' ';
 
 		$db = $this->connect();

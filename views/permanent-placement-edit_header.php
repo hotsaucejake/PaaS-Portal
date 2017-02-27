@@ -1,4 +1,6 @@
 <?php
+require 'classes/PHPMailer/PHPMailerAutoload.php';
+
 $msg = array();
 if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
 
@@ -24,6 +26,37 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
 
    if($update_form){
     $msg = 'Permanent Placement form updated!';
+
+    $mail = new PHPMailer;
+      //$mail->SMTPDebug = 3;                  // Enable verbose debug output
+      $mail->isSMTP();                         // Set mailer to use SMTP
+      $mail->Host = SMTP_HOST;                 // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                  // Enable SMTP authentication
+      $mail->Username = SMTP_USER;             // SMTP username
+      $mail->Password = SMTP_PASS;             // SMTP password
+      $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = SMTP_PORT;                 // TCP port to connect to
+      $mail->setFrom(KCOILE);
+      $mail->addReplyTo(KCOILE);
+      // $mail->addAddress(JCROWDER);              // for testing
+      $mail->addAddress(LCZUPER);              // Add a recipient
+      $mail->addAddress(KCOILE);               // Add a recipient
+      $mail->addCC(JCROWDER);                  // Add a recipient
+      $mail->isHTML(true);                     // Set email format to HTML
+      $mail->Subject = 'Permanent Placement Form ID ' . $_GET["update-id"] . ' Updated';
+      $mail->Body    = 'An updated form is waiting your approval (form ID ' . $_GET["update-id"] . ').
+                        You can view the <a href="http://paas.corus360.com/index.php?page=permanent-placement-view">new form here. </a>';
+      $mail->AltBody = 'An updated form is waiting your approval (form ID ' . $_GET["update-id"] . ').
+                        You can view the new form here: http://paas.corus360.com/index.php?page=permanent-placement-view';
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          // echo 'Message has been sent';
+      }
+
+
+
    } else {
     $msg['error'] = 'Did not execute!';
     $msg['username'] = $_SESSION["user_name"];
