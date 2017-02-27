@@ -180,7 +180,7 @@
                               <label class="col-md-4 control-label" for="projectType">Project Type</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="projectType" id="projectType" value="aug" <?php if($cb_form[0]->project_type == "aug") { echo "checked"; } ?> > Staff Augmentation
+                                   <input type="radio" name="projectType" id="projectType" value="aug" <?php if($cb_form[0]->project_type == "aug") { echo "checked"; } ?> required=""> Staff Augmentation
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="projectType" id="projectType" value="sow" <?php if($cb_form[0]->project_type == "sow") { echo "checked"; } ?> > SOW
@@ -191,7 +191,7 @@
                                  <label class="col-md-4 control-label" for="issuedHardware">Issued Hardware</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="issuedHardware" id="issuedHardware" value="corus360" <?php if($cb_form[0]->issued_hardware == "corus360") { echo "checked"; } ?> > Corus360
+                                      <input type="radio" name="issuedHardware" id="issuedHardware" value="corus360" <?php if($cb_form[0]->issued_hardware == "corus360") { echo "checked"; } ?> required=""> Corus360
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="issuedHardware" id="issuedHardware" value="client" <?php if($cb_form[0]->issued_hardware == "client") { echo "checked"; } ?> > Client
@@ -205,7 +205,7 @@
                                  <label class="col-md-4 control-label" for="corusEmail">Corus360 Email?</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="corusEmail" id="corusEmail" value="1" <?php if($cb_form[0]->corus_email == "1") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="corusEmail" id="corusEmail" value="1" <?php if($cb_form[0]->corus_email == "1") { echo "checked"; } ?> required=""> Yes
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="corusEmail" id="corusEmail" value="0" <?php if($cb_form[0]->corus_email == "0") { echo "checked"; } ?> > No
@@ -216,7 +216,7 @@
                                  <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y" <?php if($cb_form[0]->background_check == "y") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y" <?php if($cb_form[0]->background_check == "y") { echo "checked"; } ?> required=""> Yes
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="backgroundCheck" id="backgroundCheck" value="n" <?php if($cb_form[0]->background_check == "n") { echo "checked"; } ?> > No
@@ -230,7 +230,7 @@
                                  <label class="col-md-4 control-label" for="traveling">Traveling, expense reporting?</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="traveling" id="traveling" value="1" <?php if($cb_form[0]->travel_reporting == "1") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="traveling" id="traveling" value="1" <?php if($cb_form[0]->travel_reporting == "1") { echo "checked"; } ?> required=""> Yes
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="traveling" id="traveling" value="0" <?php if($cb_form[0]->travel_reporting == "0") { echo "checked"; } ?> > No
@@ -259,7 +259,7 @@
                               <div class="form-group">
                                  <label class="col-md-4 control-label" for="drugTest">Drug Test?</label>
                                  <div class="col-md-8">
-                                    <select multiple class="form-control" name="drugTest[]">
+                                    <select multiple class="form-control" name="drugTest[]" required="">
                                        <?php
                                           // break the comma separated string down into array
                                           $dtests = explode(",", $cb_form[0]->drug_test);
@@ -277,7 +277,7 @@
                                  <label class="col-md-4 control-label" for="benefits">Benefits?</label>
                                  <div class="col-md-8">
                                     <label class="radio-inline">
-                                      <input type="radio" name="benefits" id="benefits" value="1" <?php if($cb_form[0]->benefits == "1") { echo "checked"; } ?> > Yes
+                                      <input type="radio" name="benefits" id="benefits" value="1" <?php if($cb_form[0]->benefits == "1") { echo "checked"; } ?> required=""> Yes
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="benefits" id="benefits" value="0" <?php if($cb_form[0]->benefits == "0") { echo "checked"; } ?> > No

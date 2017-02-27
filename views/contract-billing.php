@@ -126,7 +126,7 @@
                               <label class="col-md-4 control-label" for="environment">Environment</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="environment" id="environment" value="onsite"> Onsite
+                                   <input type="radio" name="environment" id="environment" value="onsite" required=""> Onsite
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="environment" id="environment" value="remote"> Remote
@@ -140,7 +140,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="hireType">Hire Type</label>
                               <div class="col-md-8">
-                                 <select class="form-control" name="hireType">
+                                 <select class="form-control" name="hireType" required="">
                                     <option value="W2">W2</option>
                                     <option value="1099">1099</option>
                                     <option value="corp">Corp to Corp</option>
@@ -178,7 +178,7 @@
                               <label class="col-md-4 control-label" for="projectType">Project Type</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="projectType" id="projectType" value="aug"> Staff Augmentation
+                                   <input type="radio" name="projectType" id="projectType" value="aug" required=""> Staff Augmentation
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="projectType" id="projectType" value="sow"> SOW
@@ -189,7 +189,7 @@
                               <label class="col-md-4 control-label" for="issuedHardware">Issued Hardware</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="issuedHardware" id="issuedHardware" value="corus360"> Corus360
+                                   <input type="radio" name="issuedHardware" id="issuedHardware" value="corus360" required=""> Corus360
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="issuedHardware" id="issuedHardware" value="client"> Client
@@ -203,7 +203,7 @@
                               <label class="col-md-4 control-label" for="corusEmail">Corus360 Email?</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="corusEmail" id="corusEmail" value="1"> Yes
+                                   <input type="radio" name="corusEmail" id="corusEmail" value="1" required=""> Yes
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="corusEmail" id="corusEmail" value="0"> No
@@ -214,7 +214,7 @@
                               <label class="col-md-4 control-label" for="backgroundCheck">Background Check</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y"> Yes
+                                   <input type="radio" name="backgroundCheck" id="backgroundCheck" value="y" required=""> Yes
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="backgroundCheck" id="backgroundCheck" value="n"> No
@@ -228,7 +228,7 @@
                               <label class="col-md-4 control-label" for="traveling">Traveling, expense reporting?</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="traveling" id="traveling" value="1"> Yes
+                                   <input type="radio" name="traveling" id="traveling" value="1" required=""> Yes
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="traveling" id="traveling" value="0"> No
@@ -258,7 +258,7 @@
                            <div class="form-group">
                               <label class="col-md-4 control-label" for="drugTest">Drug Test?</label>
                               <div class="col-md-8">
-                                 <select multiple class="form-control" name="drugTest[]">
+                                 <select multiple class="form-control" name="drugTest[]" required="">
                                     <option value="no">No</option>
                                     <option value="p5">Panel 5</option>
                                     <option value="p9">Panel 9</option>
@@ -272,7 +272,7 @@
                               <label class="col-md-4 control-label" for="benefits">Benefits?</label>
                               <div class="col-md-8">
                                  <label class="radio-inline">
-                                   <input type="radio" name="benefits" id="benefits" value="1"> Yes
+                                   <input type="radio" name="benefits" id="benefits" value="1" required=""> Yes
                                  </label>
                                  <label class="radio-inline">
                                    <input type="radio" name="benefits" id="benefits" value="0"> No
