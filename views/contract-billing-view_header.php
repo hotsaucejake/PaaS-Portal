@@ -49,7 +49,7 @@ if(isset($_GET['approve'])){
          $mail->addCC(JCROWDER);              // Add a recipient
 
          $stringAttachment = date('Y-m-d', strtotime($cbform[0]->created));
-         $stringAttachment .= '_PP_';
+         $stringAttachment .= '_CB_';
          $stringAttachment .= preg_replace('/\s+/', '', $cbform[0]->first_name);
          $stringAttachment .= preg_replace('/\s+/', '', $cbform[0]->last_name);
          $stringAttachment .= '_';
