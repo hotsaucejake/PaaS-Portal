@@ -44,7 +44,6 @@ if(isset($_POST["newPP"])){
       $mail->setFrom(KCOILE);
       $mail->addReplyTo(KCOILE);
 
-      $mail->addAddress(LCZUPER);              // Add a recipient
       $mail->addAddress(KCOILE);               // Add a recipient
       $mail->addCC(JCROWDER);                  // Add a recipient
 

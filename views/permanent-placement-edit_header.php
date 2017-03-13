@@ -38,8 +38,7 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
       $mail->Port = SMTP_PORT;                 // TCP port to connect to
       $mail->setFrom(KCOILE);
       $mail->addReplyTo(KCOILE);
-      // $mail->addAddress(JCROWDER);              // for testing
-      $mail->addAddress(LCZUPER);              // Add a recipient
+
       $mail->addAddress(KCOILE);               // Add a recipient
       $mail->addCC(JCROWDER);                  // Add a recipient
       $mail->isHTML(true);                     // Set email format to HTML
