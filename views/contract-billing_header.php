@@ -64,7 +64,9 @@ if(isset($_POST["newCB"])){
       $mail->addReplyTo(KCOILE);
 
       $mail->addAddress(KCOILE);              // Add a recipient
+      $mail->addAddress(SKITE);               // Add a recipient
       $mail->addCC(JCROWDER);             // Add a recipient
+      //$mail->addCC(SMATHEWS);                  // Add a recipient
 
       $mail->isHTML(true);                     // Set email format to HTML
 
