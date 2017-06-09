@@ -36,8 +36,8 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
       $mail->Password = SMTP_PASS;             // SMTP password
       $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
       $mail->Port = SMTP_PORT;                 // TCP port to connect to
-      $mail->setFrom(KCOILE);
-      $mail->addReplyTo(KCOILE);
+      $mail->setFrom(SKITE);
+      $mail->addReplyTo(SKITE);
 
       $mail->addAddress(KCOILE);               // Add a recipient
       $mail->addAddress(SKITE);               // Add a recipient
