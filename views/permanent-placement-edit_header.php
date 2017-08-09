@@ -39,7 +39,7 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
       $mail->setFrom(SKITE);
       $mail->addReplyTo(SKITE);
 
-      $mail->addAddress(KCOILE);               // Add a recipient
+      // $mail->addAddress(KCOILE);               // Add a recipient
       $mail->addAddress(SKITE);               // Add a recipient
       $mail->addCC(JCROWDER);                  // Add a recipient
       //$mail->addCC(SMATHEWS);                  // Add a recipient

@@ -42,8 +42,8 @@ if(isset($_GET['approve'])){
          $mail->SMTPSecure = SMTP_SECURE;         // Enable TLS encryption, `ssl` also accepted
          $mail->Port = SMTP_PORT;                 // TCP port to connect to
 
-         $mail->setFrom(KCOILE);
-         $mail->addReplyTo(KCOILE);
+         $mail->setFrom(SKITE);
+         $mail->addReplyTo(SKITE);
 
          $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
          $mail->addCC(JCROWDER);              // Add a recipient
