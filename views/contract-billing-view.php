@@ -42,7 +42,6 @@
                   <tbody>
                      <?php
                      foreach ($cbforms as $form) {
-                        if($_SESSION['user_name'] == $form->user_name || $_SESSION['user_role'] == "super" || $_SESSION['user_role'] == "admin"){
                            echo '<tr>';
                            echo '<td>' . $form->id . '</td>';
                            echo '<td>' . $form->first_name . '</td>';
@@ -57,10 +56,13 @@
                                                 href="pdf.php?form=contract-billing&id=<?php echo $form->id; ?>" target="_blank" title="PDF">
                                                <i class="fa fa-file-pdf-o"></i>
                                           </a>
+                                          <?php
+                                          if($_SESSION['user_name'] == $form->user_name || $_SESSION['user_role'] == "super" || $_SESSION['user_role'] == "admin"){ ?>
                                           <a class="btn btn-circle btn-icon-only btn-warning font-dark bold"
                                                 href="index.php?page=contract-billing-edit&id=<?php echo $form->id; ?>" title="Edit">
                                                <i class="fa fa-edit"></i>
                                           </a>
+                                       <?php } ?>
                                           <?php if($_SESSION['user_role'] == "super" || $_SESSION['user_role'] == "admin") { ?>
                                           <a class="btn btn-circle btn-icon-only btn-danger font-dark bold"
                                                 href="index.php?page=contract-billing-view&delete=<?php echo $form->id; ?>"
@@ -78,7 +80,6 @@
                           <?php
                            echo '</td>';
                            echo '</tr>';
-                        }
 
                      }
                       ?>
