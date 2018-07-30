@@ -49,6 +49,7 @@ if(isset($_POST["newPP"])){
       $mail->addCC(JCROWDER);                  // Add a recipient
       $mail->addCC(KMILLER);                  // Add a recipient
       $mail->addCC(SMATHEWS);                  // Add a recipient
+      $mail->addCC(DADAM);                  // Add a recipient
 
       $mail->isHTML(true);                     // Set email format to HTML
 

@@ -45,6 +45,7 @@ if(isset($_GET['approve'])){
 
          $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
          $mail->addCC(JCROWDER);              // Add a recipient
+         $mail->addCC(DADAM);                  // Add a recipient
 
          $mail->addStringAttachment($pdfstring, date('Y-m-d', strtotime($ppform[0]->created)) . '_PP_' . preg_replace('/\s+/', '', $ppform[0]->placement_name) . '.pdf');         // Add attachments
          $mail->Subject = $ppform[0]->placement_name . ' Permanent Placement Grid';

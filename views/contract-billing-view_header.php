@@ -47,6 +47,7 @@ if(isset($_GET['approve'])){
 
          $mail->addAddress(NEWHIREGRIDS);          // Add a recipient
          $mail->addCC(JCROWDER);              // Add a recipient
+         $mail->addCC(DADAM);                  // Add a recipient
 
          $stringAttachment = date('Y-m-d', strtotime($cbform[0]->created));
          $stringAttachment .= '_CB_';
