@@ -65,6 +65,7 @@ if(isset($_POST["updateForm"]) && isset($_GET["update-id"])){
       $mail->addCC(KMILLER);                  // Add a recipient
       $mail->addCC(SMATHEWS);                  // Add a recipient
       $mail->addCC(DADAM);                  // Add a recipient
+      $mail->addCC(LYANG);
       
       $mail->isHTML(true);                     // Set email format to HTML
       $mail->Subject = 'Contract Billing Form ID ' . $_GET["update-id"] . ' Updated';
